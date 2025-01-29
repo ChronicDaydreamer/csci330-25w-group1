@@ -6,8 +6,8 @@ public class Tuple {
     /*This is a constructor for a tuple which just takes in a list of Attributevalues, and sets them to the
      * values list.
      */
-    public Tuple(String[] values){
-        this.values=new LinkedList<AttrubuteValue>(Arrays.asList(values));
+    public Tuple(AttributeValue[] values){
+        this.values=new LinkedList<AttributeValue>(Arrays.asList(values));
     }
 
     /*This just gets the value of a specific attribute by searching for the attribute name, and then

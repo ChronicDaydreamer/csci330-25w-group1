@@ -17,9 +17,9 @@ public class Relation {
     /*A Constructor which also takes in a list of attribute names, and uses that to create
      * the schema linked list
      */
-    public Relation(String name, String[] attributes){
+    public Relation(String name, Attribute[] attributes){
         this.name=name;
-        this.schema=new LinkedList<>(Arrays.asList(attributes));
+        this.schema=new LinkedList<Attribute>(Arrays.asList(attributes));
         this.tuples=new LinkedList<>();
     }
 
