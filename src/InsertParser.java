@@ -11,6 +11,10 @@ public class InsertParser {
         return words[1];
     }
 
+    // public Tuple parseTuple() {
+    //     return new Tuple();
+    // }
+
     public int parseAttributeCount() {
         String[] words = input.split(" ");
         int attrCount = 0;

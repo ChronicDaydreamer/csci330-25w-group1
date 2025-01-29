@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class RelationParser {
 
     private String input;
@@ -8,6 +10,30 @@ public class RelationParser {
     public String parseRelationName() {
         String[] words = input.split(" ");
         return words[1];
+    }
+
+    public Relation parseRelation() {
+        LinkedList<Attribute> attributes = new LinkedList<>();
+        String[] words = this.input.split(" ");
+
+        String name, type, length;
+
+        for (int i = 2; i < words.length; i += 3) {
+            // cut out "(" beginning if present
+            name = words[i];
+            if (name .startsWith("(")) name = name.substring(1);
+
+            type = words[i+1];
+
+            // cut off , and ); if present
+            length = words[i+2];
+            length = length.substring(0, length.length() - 1);
+            if (length.endsWith(")")) length = length.substring(0, length.length() - 2);
+
+            attributes.add(new Attribute(name, type, length));
+        }
+
+        return new Relation(parseRelationName(), attributes);
     }
 
     public int parseAttributeCount() {
